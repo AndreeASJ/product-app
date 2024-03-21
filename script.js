@@ -24,6 +24,17 @@ class UI{
 
 document.getElementById('product-form').addEventListener('submit', function(e){  //Callback event
     e.preventDefault();
+    const name = document.getElementById('name').value;
+    const price = document.getElementById('price').value;
+    const quantity = document.getElementById('quantity').value;
+    const date = document.getElementById('date').value;
+
     const ui = new UI();
-    ui.showMessage('Product added successfully', 'success');
+
+    if (name == '' || price == '' || quantity == '' || date == '') {
+        ui.showMessage('Please fill in all fields', 'danger');
+    } else {
+        ui.showMessage('Product added successfully', 'success');
+        
+    }
 });
